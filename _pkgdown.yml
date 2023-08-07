@@ -1,13 +1,11 @@
-url: https://www.carlislerainey.com/crdata
-
+url: http://www.carlislerainey.com/crdata/
 home:
   title: crdata R data package
   description: Data I have used in my research and teaching.
-
 authors:
   Carlisle Rainey:
     href: https://www.carlislerainey.com/
-
 template:
   bootstrap: 5
   bootswatch: litera
+
