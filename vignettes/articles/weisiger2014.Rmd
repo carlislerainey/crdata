@@ -1,0 +1,65 @@
+---
+title: "Logistic Regression with a Small Sample"
+cache: true
+---
+
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+First, load the `weisiger2014` data set.
+
+```{r setup, warning=FALSE, message=FALSE}
+library(tidyverse)
+
+# load weisiger2014 data
+weis <- crdata::weisiger2014
+
+# show weisiger2014 data set
+glimpse(weis)
+```
+
+To facilitate interpretation and comparability, rescale the explanatory variables using `arm::rescale()` (i.e., so that continuous explanatory variables have mean zero and SD 0.5 and the binary explanatory variables to have mean zero.)
+
+```{r, "Show data"}
+# rescale weisiger2014 explanatory variables using arm::rescale()
+rs_weis <- weis %>%
+  mutate(across(polity_conq:coord, arm::rescale)) %>%
+  glimpse()
+```
+
+Now we fit three models.
+
+1. Least squares, which replicates Model 3 of Table 2 of Weisiger (2014).
+1. A logit alternative, fit with maximum likelihood.
+1. A logit alternative, fit with penalized maximum likelihood using the {brglm2} package.
+
+```{r "Fit models"}
+# fit models 
+f <- resist ~ polity_conq + lndist + terrain + soldperterr + gdppc2 + coord
+ls <- lm(f, data = rs_weis) # lpm (replicates Table 2 Model 3 of Weisiger 2014)
+mle <- glm(f, data = rs_weis, family = "binomial") # logistic regression
+pmle <- glm(f, data = rs_weis, family = "binomial", method = brglm2::brglmFit) # logistic regression
+```
+
+To interpret the results, we might focus on Weisiger's Hypothesis 12.
+
+> **Hypothesis:** Resistance will be more likely when the pre-war political leader remains at large in the conquered country.
+
+The table below compares the estimates. 
+
+```{r "Print tables"}
+modelsummary::modelsummary(list("Least Squares" = ls, 
+                                "Logit via MLE" = mle, 
+                                "Logit via PMLE" = pmle))
+```
+
+The plot below compares the estimates. Notice that Firth's PML estimator produces smaller estimates and CIs.
+
+```{r "Plot PML and ML"}
+modelsummary::modelplot(list("Logit via MLE" = mle, "Logit via PMLE" = pmle), conf_level = 0.90)
+```
