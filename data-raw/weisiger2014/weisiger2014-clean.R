@@ -32,6 +32,10 @@ cat("\nwrite new data set to file...\n")
 weisiger2014 <- weisiger
 usethis::use_data(weisiger2014, overwrite = TRUE)
 
+# write to inst/extdata
+write_csv(weisiger2014, "inst/extdata/weisiger2014.csv")
+write_rds(weisiger2014, "inst/extdata/weisiger2014.rds")
+
 # # in mccaskey and rainey (2021), we used rescaled version below
 #
 # # rescale vars

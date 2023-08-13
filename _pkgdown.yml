@@ -8,4 +8,9 @@ authors:
 template:
   bootstrap: 5
   bootswatch: litera
-
+  opengraph:
+    image:
+      src: man/figures/profile-tw.png
+    twitter:
+      creator: "@carlislerainey"
+      card: summary

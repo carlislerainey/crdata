@@ -36,9 +36,11 @@ I have no plans at the moment to upload to CRAN.
 
 ## Data Sets
 
-| Data Set       | References                                                                                                                                      | Topics                                                                                  |
-|----------------|-------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
-| `weisiger2014` | [Weisiger (2014)](https://journals.sagepub.com/doi/10.1177/0738894213508691); [Rainey and McCaskey (2021)](https://doi.org/10.1017/psrm.2021.9) | Logistic regression in small samples; Firth’s logit; R packages {brglm2} and {logistf}. |
+| Data Set       | References                                                                                                                                                                                                                                   | Topics                                                                                  |
+|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
+| `bm2015`       | [Rauchhaus(2009)](https://doi.org/10.1177/0022002708330387); [Bell and Miller (2015)](https://doi.org/10.1177/0022002713499718); [Rainey (2016)](https://doi.org/10.1093/pan/mpw014); [Rainey (2023)](https://doi.org/10.31235/osf.io/bmvnu) | Logistic regression with separation in large samples.                                   |
+| `br2014`       | [Barrilleaux and Rainey (2014)](https://doi.org/10.1177/1532440014561644); [Rainey (2016)](https://doi.org/10.1093/pan/mpw014); [Rainey (2023)](https://doi.org/10.31235/osf.io/bmvnu)                                                       | Logistic regression with separation in small samples.                                   |
+| `weisiger2014` | [Weisiger (2014)](https://journals.sagepub.com/doi/10.1177/0738894213508691); [Rainey and McCaskey (2021)](https://doi.org/10.1017/psrm.2021.9)                                                                                              | Logistic regression in small samples; Firth’s logit; R packages {brglm2} and {logistf}. |
 
 ## Using the Data
 
