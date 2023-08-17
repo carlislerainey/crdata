@@ -72,11 +72,8 @@
 
 
 
-<script src="weisiger2014_files/htmlwidgets-1.6.2/htmlwidgets.js"></script><link href="weisiger2014_files/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
-<script src="weisiger2014_files/datatables-binding-0.28/datatables.js"></script><link href="weisiger2014_files/dt-core-1.13.4/css/jquery.dataTables.min.css" rel="stylesheet">
-<link href="weisiger2014_files/dt-core-1.13.4/css/jquery.dataTables.extra.css" rel="stylesheet">
-<script src="weisiger2014_files/dt-core-1.13.4/js/jquery.dataTables.min.js"></script><link href="weisiger2014_files/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
-<script src="weisiger2014_files/crosstalk-1.2.0/js/crosstalk.min.js"></script><div class="row">
+<script src="weisiger2014_files/kePrint-0.0.1/kePrint.js"></script><link href="weisiger2014_files/lightable-0.0.1/lightable.css" rel="stylesheet">
+<div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="" class="logo" alt=""><h1>Logistic Regression with a Small Sample</h1>
             
@@ -145,14 +142,327 @@ pre-war political leader remains at large in the conquered country.</p>
 </blockquote>
 <p>The table below compares the estimates.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">modelsummary</span><span class="fu">::</span><span class="fu"><a href="https://vincentarelbundock.github.io/modelsummary/reference/modelsummary.html" class="external-link">modelsummary</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="st">"Least Squares"</span> <span class="op">=</span> <span class="va">ls</span>, </span>
+<code class="sourceCode R"><span><span class="fu">modelsummary</span><span class="fu">::</span><span class="fu"><a href="https://modelsummary.com/reference/modelsummary.html" class="external-link">modelsummary</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="st">"Least Squares"</span> <span class="op">=</span> <span class="va">ls</span>, </span>
 <span>                                <span class="st">"Logit via MLE"</span> <span class="op">=</span> <span class="va">mle</span>, </span>
 <span>                                <span class="st">"Logit via PMLE"</span> <span class="op">=</span> <span class="va">pmle</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-57f839f5ec608199bba6" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-57f839f5ec608199bba6">{"x":{"filter":"none","vertical":false,"data":[["(Intercept)","","polity_conq","","lndist","","terrain","","soldperterr","","gdppc2","","coord","","Num.Obs.","R2","R2 Adj.","AIC","BIC","Log.Lik.","RMSE"],["0.400","(0.058)","-0.275","(0.165)","0.473","(0.161)","0.202","(0.148)","-0.128","(0.171)","-0.129","(0.154)","0.436","(0.152)","35","0.608","0.524","32.6","45.0","-8.291","0.31"],["-0.731","(0.832)","-4.208","(2.689)","6.886","(3.666)","1.320","(2.323)","-0.302","(1.997)","-3.275","(3.553)","5.648","(3.087)","35","","","29.5","40.4","-7.756","0.27"],["-0.477","(0.523)","-2.277","(1.657)","3.402","(1.828)","1.102","(1.358)","-0.595","(1.419)","-1.154","(1.833)","3.051","(1.548)","35","","","32.1","43.0","-9.074","0.27"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Least Squares<\/th>\n      <th>Logit via MLE<\/th>\n      <th>Logit via PMLE<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><p>The plot below compares the estimates. Notice that Firth’s PML
+<table class="table table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead><tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Least Squares
+</th>
+<th style="text-align:center;">
+Logit via MLE
+</th>
+<th style="text-align:center;">
+Logit via PMLE
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+(Intercept)
+</td>
+<td style="text-align:center;">
+0.400
+</td>
+<td style="text-align:center;">
+−0.731
+</td>
+<td style="text-align:center;">
+−0.477
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+(0.058)
+</td>
+<td style="text-align:center;">
+(0.832)
+</td>
+<td style="text-align:center;">
+(0.523)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+polity_conq
+</td>
+<td style="text-align:center;">
+−0.275
+</td>
+<td style="text-align:center;">
+−4.208
+</td>
+<td style="text-align:center;">
+−2.277
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+(0.165)
+</td>
+<td style="text-align:center;">
+(2.689)
+</td>
+<td style="text-align:center;">
+(1.657)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+lndist
+</td>
+<td style="text-align:center;">
+0.473
+</td>
+<td style="text-align:center;">
+6.886
+</td>
+<td style="text-align:center;">
+3.402
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+(0.161)
+</td>
+<td style="text-align:center;">
+(3.666)
+</td>
+<td style="text-align:center;">
+(1.828)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+terrain
+</td>
+<td style="text-align:center;">
+0.202
+</td>
+<td style="text-align:center;">
+1.320
+</td>
+<td style="text-align:center;">
+1.102
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+(0.148)
+</td>
+<td style="text-align:center;">
+(2.323)
+</td>
+<td style="text-align:center;">
+(1.358)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+soldperterr
+</td>
+<td style="text-align:center;">
+−0.128
+</td>
+<td style="text-align:center;">
+−0.302
+</td>
+<td style="text-align:center;">
+−0.595
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+(0.171)
+</td>
+<td style="text-align:center;">
+(1.997)
+</td>
+<td style="text-align:center;">
+(1.419)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+gdppc2
+</td>
+<td style="text-align:center;">
+−0.129
+</td>
+<td style="text-align:center;">
+−3.275
+</td>
+<td style="text-align:center;">
+−1.154
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+(0.154)
+</td>
+<td style="text-align:center;">
+(3.553)
+</td>
+<td style="text-align:center;">
+(1.833)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+coord
+</td>
+<td style="text-align:center;">
+0.436
+</td>
+<td style="text-align:center;">
+5.648
+</td>
+<td style="text-align:center;">
+3.051
+</td>
+</tr>
+<tr>
+<td style="text-align:left;box-shadow: 0px 1.5px">
+</td>
+<td style="text-align:center;box-shadow: 0px 1.5px">
+(0.152)
+</td>
+<td style="text-align:center;box-shadow: 0px 1.5px">
+(3.087)
+</td>
+<td style="text-align:center;box-shadow: 0px 1.5px">
+(1.548)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Num.Obs.
+</td>
+<td style="text-align:center;">
+35
+</td>
+<td style="text-align:center;">
+35
+</td>
+<td style="text-align:center;">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+R2
+</td>
+<td style="text-align:center;">
+0.608
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+R2 Adj.
+</td>
+<td style="text-align:center;">
+0.524
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AIC
+</td>
+<td style="text-align:center;">
+32.6
+</td>
+<td style="text-align:center;">
+29.5
+</td>
+<td style="text-align:center;">
+32.1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BIC
+</td>
+<td style="text-align:center;">
+45.0
+</td>
+<td style="text-align:center;">
+40.4
+</td>
+<td style="text-align:center;">
+43.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Log.Lik.
+</td>
+<td style="text-align:center;">
+−8.291
+</td>
+<td style="text-align:center;">
+−7.756
+</td>
+<td style="text-align:center;">
+−9.074
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+F
+</td>
+<td style="text-align:center;">
+7.244
+</td>
+<td style="text-align:center;">
+1.210
+</td>
+<td style="text-align:center;">
+1.576
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RMSE
+</td>
+<td style="text-align:center;">
+0.31
+</td>
+<td style="text-align:center;">
+0.27
+</td>
+<td style="text-align:center;">
+0.27
+</td>
+</tr>
+</tbody>
+</table>
+<p>The plot below compares the estimates. Notice that Firth’s PML
 estimator produces smaller estimates and CIs.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">modelsummary</span><span class="fu">::</span><span class="fu"><a href="https://vincentarelbundock.github.io/modelsummary/reference/modelplot.html" class="external-link">modelplot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="st">"Logit via MLE"</span> <span class="op">=</span> <span class="va">mle</span>, <span class="st">"Logit via PMLE"</span> <span class="op">=</span> <span class="va">pmle</span><span class="op">)</span>, conf_level <span class="op">=</span> <span class="fl">0.90</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">modelsummary</span><span class="fu">::</span><span class="fu"><a href="https://modelsummary.com/reference/modelplot.html" class="external-link">modelplot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="st">"Logit via MLE"</span> <span class="op">=</span> <span class="va">mle</span>, <span class="st">"Logit via PMLE"</span> <span class="op">=</span> <span class="va">pmle</span><span class="op">)</span>, conf_level <span class="op">=</span> <span class="fl">0.90</span><span class="op">)</span></span></code></pre></div>
 <p><img src="weisiger2014_files/figure-html/Plot%20PML%20and%20ML-1.png" width="700"></p>
   </main>
 </div>
