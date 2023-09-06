@@ -1,0 +1,100 @@
+---
+title: "Predictive Distribution"
+cache: true
+---
+
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+In this short vignette, I show how I might use the `holland2015` data set to illustrate a posterior predictive distribution. I like to...
+
+1. Fit the model.
+2. Simulate fake data from the model.
+3. Plot the fake data alongside the real data to understand ways in which the model might not describe the observed data set well. 
+
+It's important to note that deviations between the fake and real data may or may not matter for the conclusions, depending on the quantity of interest. However, I'd suggest it's usually "good to know" how the model deviates from the data, regardless of whether that affects the conclusions the author chooses to focus on.
+
+In the example below, I focus on the Santiago cases from Holland's data, which are overdispersed relative to her model. Econometricians have argued that this overdispersion is not a problem, so long as the author uses robust standard errors (which Holland does).
+
+Let me show you quickly how I might generate these fake data using {rstanarm} and {tidybayes} with little data wrangling mixed in.
+
+First, load the `holland2015` data set from my personal {crdata} package on GitHub. Then subset to the Sanitago cases. These cases have a bit of overdispersion, so it's a good example.
+
+```{r setup, warning=FALSE, message=FALSE}
+
+# load packages
+library(tidyverse)
+
+# install (or update if needed) crdata package
+#devtools::install_github("carlislerainey/crdata")
+
+# load holland's data set and subset to santiago only
+santiago <- crdata::holland2015 %>%
+  filter(city == "santiago")
+
+# show the santiago observations
+glimpse(santiago)
+```
+
+Next, fit the model with {rstanarm}. This model reproduces the results for Model 1 in her Table 2. Not, though, that Holland uses rescaled and exponentiated coefficients, so the coefficients won't agree.
+
+```{r, "Fit model"}
+#| output: false
+#| message: false
+
+# load packages
+library(rstanarm)
+
+# formula corresponds to model 1 for each city in holland (2015) table 2
+f <- operations ~ lower + vendors + budget + population
+
+# fit poisson regression model using Stan
+fit <- stan_glm(f, family = poisson, data = santiago, 
+                cores = 4, chains = 4)
+```
+
+Next, use `add_predicted_draws()` from the {tidybayes} package to add fake observations to the original dataset. Then we need to do a bit of wrangling to get those fake and observed data ready for 
+
+```{r, "Simulate fake data sets"}
+# load packages
+library(tidybayes)
+
+# simulate 11 fake observations 
+fake <- santiago %>%
+  add_predicted_draws(fit, ndraws = 11) %>%
+  glimpse()
+
+# wrangle fake data for plotting
+gg_fake <- fake %>%
+  ungroup() %>%
+  # pivot real and fake data into the same column
+  pivot_longer(cols = c(operations, .prediction), 
+               names_to = "type", 
+               values_to = "operations") %>%
+  # label each observation type; real or fake + simulation number
+  mutate(obs_type = case_when(type == "operations" ~ "Real Data", 
+                              type == ".prediction" ~ paste0("Fake Data #", .draw))) %>%
+  # remove duplicated real data observations (above produces one per draw)
+  filter(!(obs_type == "Real Data" & .draw > 1)) %>%
+  # make .draw = 0 for real data
+  mutate(.draw = ifelse(obs_type == "Real Data", 0, .draw)) %>%
+  # order obs_type by draw number
+  mutate(obs_type = reorder(obs_type, .draw)) %>%
+  glimpse()
+
+# plot fake data
+ggplot(gg_fake, aes(x = lower, y = operations, color = type)) + 
+  facet_wrap(vars(obs_type)) + 
+  geom_point(shape = 21) + 
+  theme_bw() + 
+  theme(legend.position = "none") + 
+  labs(title = "Illustrating Posterior Predictive Distribution", 
+       x = "Share of Lower-Class Residents in a District",
+       y = "Number of Enforcement Operations")
+```
+This figure shows that the real data noticeably differ from the Poisson model. For districts with few lower-class residents, the real data have a *much* larger variance than the model suggestions. If you repeat this exercise for Lima or Bogota, you will find much better correspondence between the two.
