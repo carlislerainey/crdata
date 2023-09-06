@@ -31,7 +31,7 @@ First, load the `holland2015` data set from my personal {crdata} package on GitH
 library(tidyverse)
 
 # install (or update if needed) crdata package
-#devtools::install_github("carlislerainey/crdata")
+devtools::install_github("carlislerainey/crdata")
 
 # load holland's data set and subset to santiago only
 santiago <- crdata::holland2015 %>%

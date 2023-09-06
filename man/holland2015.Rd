@@ -9,13 +9,13 @@ A data frame with 89 district-level observations across three cities:
 \describe{
 \item{\code{city}}{the observation's city (Holland performs separate analyses for each city)}
 \item{\code{district}}{the name of the district (the unit of observation)}
-\item{\code{operations}}{the average number of enforcement operations conducted per month by a district}
+\item{\code{operations}}{the number of enforcement operations conducted per month by a district (averaged across three or more months per district)}
 \item{\code{lower}}{share of lower-class residents in a district}
 \item{\code{vendors}}{the number of unlicensed street vendors (in thousands)}
 \item{\code{budget}}{district budget per capita}
 \item{\code{population}}{district population (unclear scale)}
 }
-For further details, see Holland (2015, p. 364).
+For further details, see Holland (2015, p. 364) and pp. 3-6 of the file \href{https://onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1111\%2Fajps.12125&file=ajps12125-sup-0001-SupMat.docx}{ajps12125-sup-0001-SupMat.docx} available on the journal website.
 }
 \usage{
 holland2015

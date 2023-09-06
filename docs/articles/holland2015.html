@@ -114,7 +114,15 @@ cases have a bit of overdispersion, so it’s a good example.</p>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># install (or update if needed) crdata package</span></span>
-<span><span class="co">#devtools::install_github("carlislerainey/crdata")</span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"carlislerainey/crdata"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">──</span> <span style="color: #00BBBB;">R CMD build</span> <span style="color: #00BBBB;">─────────────────────────────────────────────────────────────────</span></span></span>
+<span><span class="co">#&gt; * checking for file ‘/private/var/folders/h9/y3l6d7hs1m5fsvhdzj_jkdfr0000gp/T/RtmpZH1uzD/remotes4aef47dc6adc/carlislerainey-crdata-9fa6351/DESCRIPTION’ ... OK</span></span>
+<span><span class="co">#&gt; * preparing ‘crdata’:</span></span>
+<span><span class="co">#&gt; * checking DESCRIPTION meta-information ... OK</span></span>
+<span><span class="co">#&gt; * checking for LF line-endings in source and make files and shell scripts</span></span>
+<span><span class="co">#&gt; * checking for empty or unneeded directories</span></span>
+<span><span class="co">#&gt; Removed empty directory ‘crdata/vignettes’</span></span>
+<span><span class="co">#&gt; * building ‘crdata_0.0.0.9000.tar.gz’</span></span>
 <span></span>
 <span><span class="co"># load holland's data set and subset to santiago only</span></span>
 <span><span class="va">santiago</span> <span class="op">&lt;-</span> <span class="fu">crdata</span><span class="fu">::</span><span class="va"><a href="../reference/holland2015.html">holland2015</a></span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
@@ -171,7 +179,7 @@ for</p>
 <span><span class="co">#&gt; $ .chain      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</span></span>
 <span><span class="co">#&gt; $ .iteration  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</span></span>
 <span><span class="co">#&gt; $ .draw       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 1, 2, 3, 4, 5, 6, 7, 8,…</span></span>
-<span><span class="co">#&gt; $ .prediction <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 4, 1, 2, 0, 2, 3, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 2…</span></span>
+<span><span class="co">#&gt; $ .prediction <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 2, 0, 3, 1, 2, 1, 1, 1, 2, 2, 1, 0, 0, 0, 0, 1, 2, 1, 0, 1…</span></span>
 <span></span>
 <span><span class="co"># wrangle fake data for plotting</span></span>
 <span><span class="va">gg_fake</span> <span class="op">&lt;-</span> <span class="va">fake</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
@@ -203,7 +211,7 @@ for</p>
 <span><span class="co">#&gt; $ .iteration <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
 <span><span class="co">#&gt; $ .draw      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 0, 1, 2, 3, 4, 5, 6, …</span></span>
 <span><span class="co">#&gt; $ type       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "operations", ".prediction", ".prediction", ".prediction", …</span></span>
-<span><span class="co">#&gt; $ operations <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 0, 4, 1, 2, 0, 2, 3, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1,…</span></span>
+<span><span class="co">#&gt; $ operations <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 0, 2, 0, 3, 1, 2, 1, 1, 1, 2, 2, 1, 0, 0, 0, 0, 0, 1, 2, 1,…</span></span>
 <span><span class="co">#&gt; $ obs_type   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span> Real Data, Fake Data #1, Fake Data #2, Fake Data #3, Fake D…</span></span>
 <span></span>
 <span><span class="co"># plot fake data</span></span>
