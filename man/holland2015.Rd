@@ -56,13 +56,7 @@ Holland, Alisha C. 2015. "The Distributive Politics of Enforcement."
 
 Holland, Alisha. 2014. "Replication data for: The Distributive Politics of Enforcement." Harvard Dataverse, V2. \doi{10.7910/DVN/24859}.
 
-Pevehouse, Jon, and Bruce Russett.
-2006.
-"Democratic International Governmental Organizations Promote Peace."
-\emph{International Organization} 60(4): 969-1000.
-\doi{10.1017/S0020818306060322}.
-
 Rainey, Carlisle. 2023. "A Careful Consideration of CLARIFY: Simulation-Induced Bias in Point Estimates of Quantities of Interest."
-\emph{Political Science Research and Methods}. Forthcoming. \emph{10.1017/psrm.2023.8}.
+\emph{Political Science Research and Methods}. Forthcoming. \doi{10.1017/psrm.2023.8}.
 }
 \keyword{datasets}
