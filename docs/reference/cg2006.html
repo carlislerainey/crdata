@@ -121,11 +121,11 @@ Harvard Dataverse, V1.</p>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># reproduce Clark and Golder's 1946-2000 Established Democracies model in Table 2 on p. 698</span></span></span>
 <span class="r-in"><span><span class="va">f</span> <span class="op">&lt;-</span> <span class="va">enep</span> <span class="op">~</span> <span class="va">eneg</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html" class="external-link">log</a></span><span class="op">(</span><span class="va">average_magnitude</span><span class="op">)</span> <span class="op">+</span> <span class="va">eneg</span><span class="op">*</span><span class="va">upper_tier</span> <span class="op">+</span> <span class="va">en_pres</span><span class="op">*</span><span class="va">proximity</span></span></span>
-<span class="r-in"><span><span class="va">fit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">f</span>, data <span class="op">=</span> <span class="va">cg2006</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">fit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">f</span>, data <span class="op">=</span> <span class="va">cg</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Call:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> lm(formula = f, data = cg2006)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> lm(formula = f, data = cg)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Residuals:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     Min      1Q  Median      3Q     Max </span>

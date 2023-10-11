@@ -41,7 +41,7 @@
 #'
 #' # reproduce Clark and Golder's 1946-2000 Established Democracies model in Table 2 on p. 698
 #' f <- enep ~ eneg*log(average_magnitude) + eneg*upper_tier + en_pres*proximity
-#' fit <- lm(f, data = cg2006)
+#' fit <- lm(f, data = cg)
 #' summary(fit)
 #'
 #' # QQ-plot of residuals

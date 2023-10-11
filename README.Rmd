@@ -60,9 +60,9 @@ I have no plans at the moment to upload to CRAN.
 | `bm2015`  | [Rauchhaus(2009)](https://doi.org/10.1177/0022002708330387); [Bell and Miller (2015)](https://doi.org/10.1177/0022002713499718); [Rainey (2016)](https://doi.org/10.1093/pan/mpw014); [Rainey (2023)](https://doi.org/10.31235/osf.io/bmvnu) | Logistic regression with separation in large samples. | 
 | `br2014`  | [Barrilleaux and Rainey (2014)](https://doi.org/10.1177/1532440014561644); [Rainey (2016)](https://doi.org/10.1093/pan/mpw014); [Rainey (2023)](https://doi.org/10.31235/osf.io/bmvnu) | Logistic regression with separation in small samples. | 
 | `cg2006`  | [Clark and Golder (2006)](https://doi.org/10.1177/0010414005278420); [Rainey (2014)](https://doi.org/10.1111/ajps.12102); [Baissa and Rainey (2018)](https://doi.org/10.1017/psrm.2018.34) | Linear regression, equivalence testing, interaction, non-normal residuals, outliers | 
-| `holland2015`  | [Holland (215)](doi:10.7910/DVN/HGXPHP/SVLIF1); [Rainey (2023)](https://doi.org/10.1017/psrm.2023.8) | Poisson regression, preditive distribution | 
+| `hks2013`  | [Hultman, Kathman, and Shannon (2013)](https://doi.org/10.1111/ajps.12036); [Rainey (2023)](https://doi.org/10.1017/psrm.2023.8) | Poisson regression, predictive distribution, overdispersion, information criteria | 
+| `holland2015`  | [Holland (2015)](https://doi.org/10.1111/ajps.12125); [McCaskey and Rainey (2015)](https://doi.org/10.1515/spp-2015-0001) | Poisson regression, predictive distribution, overdispersion, information criteria | 
 | `weisiger2014`  | [Weisiger (2014)](https://journals.sagepub.com/doi/10.1177/0738894213508691); [Rainey and McCaskey (2021)](https://doi.org/10.1017/psrm.2021.9) | Logistic regression in small samples; Firth's logit; R packages {brglm2} and {logistf}. | 
-
 
 
 ## Using the Data

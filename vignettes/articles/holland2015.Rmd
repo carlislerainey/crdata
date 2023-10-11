@@ -97,4 +97,5 @@ ggplot(gg_fake, aes(x = lower, y = operations, color = type)) +
        x = "Share of Lower-Class Residents in a District",
        y = "Number of Enforcement Operations")
 ```
+
 This figure shows that the real data noticeably differ from the Poisson model. For districts with few lower-class residents, the real data have a *much* larger variance than the model suggestions. If you repeat this exercise for Lima or Bogota, you will find much better correspondence between the two.
