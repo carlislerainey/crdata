@@ -1,6 +1,6 @@
 #' A data set on MID onset; illustrates logistic regression
 #'
-#' Oneal and Russett (2001) data set used in Rainey (2016) to illustrate compression in logistic regression models.
+#' Russett and Oneal (2001) data set used in Rainey (2016) to illustrate compression in logistic regression models.
 #' These are the data to reproduce the logistic regression coefficients in Table 2 on p. 11 of the \href{https://static.cambridge.org/content/id/urn:cambridge.org:id:article:S204984701500059X/resource/name/S204984701500059Xsup001.pdf}{Appendix to Rainey (2016)}.
 #' Note that I've altered the coding of some variables, so the coefficients won't replicate exactly.
 #'
@@ -21,26 +21,33 @@
 #' \item{\code{power}}{factor variable indicating whether the dyad is minor powers or at least one member is a great power.}
 #' }
 #'
+#' @references
 #'
+#' Russett, Bruce, and John R. Oneal. 2001. \emph{Triangulating Peace: Democracy, Interdependence, and International Organizations}. New York: W. W. Norton.
+#'
+#' Rainey, Carlisle. 2016. "Compression and Conditional Effects: A Product Term Is Essential When Using Logistic Regression to Test for Interaction."
+#' \emph{Political Science Research and Methods} 4(3): 621–39. \doi{0.1017/psrm.2015.59}.
+#'
+#' Rainey, Carlisle. 2015. "Replication Data for: Compression and Conditional Effects." \doi{10.7910/DVN/ASSC0Y}.
 #'
 #'
 #' @examples
 #'
 #' # a simple example
 #'
-#' or <- crdata::or2001
+#' ro <- crdata::oro001
 #'
 #' # glm version of their gee on pp. 314 with no product term
 #' m.noprod <- glm(dispute ~ allies + lcaprat2 + contiguity + dem.lo + logdstab + power,
-#'                 family = "binomial", data = or)
+#'                 family = "binomial", data = ro)
 #'
 #' # glm version of their gee on pp. 314 with no product terms
 #' m.prod <- glm(dispute ~ allies + lcaprat2 + contiguity + dem.lo*logdstab + power,
-#'               family = "binomial", data = or)
+#'               family = "binomial", data = ro)
 #'
 #'
 #' # there are no non-contiguous minor powers in this data set
-#' table(or$contiguity, or$power)
+#' table(ro$contiguity, ro$power)
 #'
 #'
-"or2001"
+"ro2001"

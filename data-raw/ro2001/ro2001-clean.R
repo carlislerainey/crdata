@@ -7,7 +7,7 @@ country_names <- countrycode::codelist_panel |>
 
 # Data available at
 #   http://pantheon.yale.edu/~brusset/io_dta.zip
-or2001 <- foreign::read.dta("data-raw/or2001/or.dta") |>
+ro2001 <- foreign::read.dta("data-raw/ro2001/or.dta") |>
   mutate(dem.lo = pmin(demauta, demautb)) |>
   #mutate(stateaname = countrycode::countrycode(statea, origin = "cown", destination = "country.name")) |>
   #mutate(statebname = countrycode::countrycode(stateb, origin = "cown", destination = "country.name")) |>
@@ -31,9 +31,9 @@ or2001 <- foreign::read.dta("data-raw/or2001/or.dta") |>
          dem.lo, logdstab, power) |>
   glimpse()
 
-usethis::use_data(or2001, overwrite = TRUE)
+usethis::use_data(ro2001, overwrite = TRUE)
 
 
 # write to inst/extdata
-write_csv(or2001, "inst/extdata/or2001.csv")
-write_rds(or2001, "inst/extdata/or2001.rds")
+write_csv(ro2001, "inst/extdata/ro2001.csv")
+write_rds(ro2001, "inst/extdata/ro2001.rds")

@@ -62,6 +62,7 @@ I have no plans at the moment to upload to CRAN.
 | `cg2006`  | [Clark and Golder (2006)](https://doi.org/10.1177/0010414005278420); [Rainey (2014)](https://doi.org/10.1111/ajps.12102); [Baissa and Rainey (2018)](https://doi.org/10.1017/psrm.2018.34) | Linear regression, equivalence testing, interaction, non-normal residuals, outliers | 
 | `hks2013`  | [Hultman, Kathman, and Shannon (2013)](https://doi.org/10.1111/ajps.12036); [Rainey (2023)](https://doi.org/10.1017/psrm.2023.8) | Poisson regression, predictive distribution, overdispersion, information criteria | 
 | `holland2015`  | [Holland (2015)](https://doi.org/10.1111/ajps.12125); [McCaskey and Rainey (2015)](https://doi.org/10.1515/spp-2015-0001) | Poisson regression, predictive distribution, overdispersion, information criteria | 
+| `ro2001`  | [Russett and Oneal (2001)](https://www.amazon.com/Triangulating-Peace-Interdependence-International-Organizations/dp/039397684X); [Rainey (2016)](https://doi.org/10.1017/psrm.2015.59) | logistic regression, compression | 
 | `weisiger2014`  | [Weisiger (2014)](https://journals.sagepub.com/doi/10.1177/0738894213508691); [Rainey and McCaskey (2021)](https://doi.org/10.1017/psrm.2021.9) | Logistic regression in small samples; Firth's logit; R packages {brglm2} and {logistf}. | 
 
 
