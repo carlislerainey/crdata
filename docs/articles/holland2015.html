@@ -116,7 +116,7 @@ cases have a bit of overdispersion, so it’s a good example.</p>
 <span><span class="co"># install (or update if needed) crdata package</span></span>
 <span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"carlislerainey/crdata"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #00BBBB;">──</span> <span style="color: #00BBBB;">R CMD build</span> <span style="color: #00BBBB;">─────────────────────────────────────────────────────────────────</span></span></span>
-<span><span class="co">#&gt; * checking for file ‘/private/var/folders/h9/y3l6d7hs1m5fsvhdzj_jkdfr0000gp/T/RtmpY4dBvI/remotesde8877845159/carlislerainey-crdata-c65b294/DESCRIPTION’ ... OK</span></span>
+<span><span class="co">#&gt; * checking for file ‘/private/var/folders/h9/y3l6d7hs1m5fsvhdzj_jkdfr0000gp/T/RtmpMw7y7P/remotes1fcc3e302c94/carlislerainey-crdata-bf1d9f1/DESCRIPTION’ ... OK</span></span>
 <span><span class="co">#&gt; * preparing ‘crdata’:</span></span>
 <span><span class="co">#&gt; * checking DESCRIPTION meta-information ... OK</span></span>
 <span><span class="co">#&gt; * checking for LF line-endings in source and make files and shell scripts</span></span>
@@ -179,7 +179,7 @@ for</p>
 <span><span class="co">#&gt; $ .chain      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</span></span>
 <span><span class="co">#&gt; $ .iteration  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</span></span>
 <span><span class="co">#&gt; $ .draw       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 1, 2, 3, 4, 5, 6, 7, 8,…</span></span>
-<span><span class="co">#&gt; $ .prediction <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 0, 2, 0, 2, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2…</span></span>
+<span><span class="co">#&gt; $ .prediction <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 4, 1, 1, 1, 2, 1, 1, 3, 1, 1, 6, 0, 1, 0, 3, 0, 1, 0, 2, 1…</span></span>
 <span></span>
 <span><span class="co"># wrangle fake data for plotting</span></span>
 <span><span class="va">gg_fake</span> <span class="op">&lt;-</span> <span class="va">fake</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
@@ -211,7 +211,7 @@ for</p>
 <span><span class="co">#&gt; $ .iteration <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
 <span><span class="co">#&gt; $ .draw      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 0, 1, 2, 3, 4, 5, 6, …</span></span>
 <span><span class="co">#&gt; $ type       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "operations", ".prediction", ".prediction", ".prediction", …</span></span>
-<span><span class="co">#&gt; $ operations <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 0, 0, 2, 0, 2, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1,…</span></span>
+<span><span class="co">#&gt; $ operations <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 0, 4, 1, 1, 1, 2, 1, 1, 3, 1, 1, 6, 0, 0, 1, 0, 3, 0, 1, 0,…</span></span>
 <span><span class="co">#&gt; $ obs_type   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span> Real Data, Fake Data #1, Fake Data #2, Fake Data #3, Fake D…</span></span>
 <span></span>
 <span><span class="co"># plot fake data</span></span>
