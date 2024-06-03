@@ -35,7 +35,7 @@
 #'
 #' # a simple example
 #'
-#' ro <- crdata::oro001
+#' ro <- crdata::ro2001
 #'
 #' # glm version of their gee on pp. 314 with no product term
 #' m.noprod <- glm(dispute ~ allies + lcaprat2 + contiguity + dem.lo + logdstab + power,
