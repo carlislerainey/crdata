@@ -1,7 +1,9 @@
 #' An experimental data set; illustrates analysis of experimental data
 #'
+#' @description
 #' Robbins et al. (2024) data set used to illustrate analysis of experimental data.
 #'
+#' @details
 #' They use a 2 x 2 factorial vignette design, randomly assigning
 #' each respondent to read one of four vignettes. The vignette describes a hypothetical covert operation that ends in either success or failure.
 #' Then, the vignette describes a whistleblower coming forward and the legislature chooses to either amplify or ignore the whistleblower.

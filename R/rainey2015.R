@@ -1,0 +1,54 @@
+#' A data set on party mobilization; illustrates hierarchical models
+#'
+#' Rainey (2015) uses survey data to examine how party mobilization varies across district
+#' competitiveness and electoral rules.
+#'
+#' In Rainey (2015), the key claim is that "the (positive) marginal effect of a district's competitiveness on mobilization is
+#' greater under SMD rules than under PR rules." Alternatively, disproportional rules
+#' strengthen parties’ incentives to mobilize in competitive districts.
+#'
+#' There are three versions: \code{rainey2015} includes all the variables and observations below;
+#' \code{finland} includes \code{election_id} and \code{contacted} for Finland only; and
+#' \code{uk} includes \code{election_id}, \code{district_competitiveness}, and \code{contacted} for Great Britain only.
+#' These smaller datasets are useful for simpler problems.
+#'
+#' @format A data frame with 5,126 individual-level observations from five national
+#' legislative elections and 5 variables:
+#' \describe{
+#'   \item{\code{election_id}}{name for the election (character). Usually country name, except Portugal, which has two elections indicated by an appended year.}
+#'   \item{\code{district_id}}{election and district label. The district numbers are arbitrary IDs.}
+#'   \item{\code{contacted}}{self-reported party contact during the last campaign (factor with levels \code{"Not Contacted"}, \code{"Contacted"}).}
+#'   \item{\code{district_competitiveness}}{district-level competitiveness measure in \eqn{[0,1]} based on Grofman–Selb thresholds for d’Hondt/SMD systems (numeric).}
+#'   \item{\code{electoral_rules}}{electoral formula for the district (factor with levels \code{"PR"} and \code{"SMD"}).}
+#' }
+#' For details on measurement, modeling choices, and case selection, see the article and
+#' online appendix.
+#'
+#' @source Replication data and code: Harvard Dataverse, \doi{10.7910/DVN/27666}.
+#'
+#' @references
+#' Rainey, Carlisle. 2015. "Strategic mobilization: Why proportional representation decreases voter mobilization."
+#' \emph{Electoral Studies} 37: 86–98. \doi{10.1016/j.electstud.2014.10.008}.
+#'
+#' Grofman, Bernard, and Peter Selb. 2009. "A fully general index of political competition."
+#' \emph{Electoral Studies} 28(2): 291–296. \doi{10.1016/j.electstud.2009.01.009}.
+#'
+#' @examples
+#' # load data
+#' rainey <- crdata::rainey2015
+#'
+#' # table of observations per election
+#' table(rainey$election_id)
+#'
+#' # fit logit model
+#' f <- contacted ~ district_competitiveness * electoral_rules
+#' fit <- glm(f, family = binomial, data = rainey)
+#' summary(fit)
+#'
+#' @docType data
+#' @name rainey2015
+#' @aliases rainey2015 finland uk
+#' @keywords datasets
+"rainey2015"
+"finland"
+"uk"
